@@ -1,10 +1,207 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Hello World Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Atelier Marguerite Montréal</title>
+  <meta name="description" content="Atelier Marguerite est une marque de mode et d'accessoires à Montréal, spécialisée dans des créations uniques, durables et éthiques à partir de tissus recyclés.">
+  <style>
+    body {
+      font-family: "Georgia", serif;
+      background: #fdf6f0;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #9d6b53;
+      color: #fff;
+      padding: 2rem 1rem 1rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      letter-spacing: 1px;
+    }
+    header p {
+      margin: 0.5rem 0 0 0;
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+    .lang-switch {
+      margin-top: 1rem;
+      text-align: right;
+      margin-right: 1.5rem;
+    }
+    .lang-switch button {
+      background: #fff;
+      color: #9d6b53;
+      border: 2px solid #9d6b53;
+      border-radius: 20px;
+      padding: 0.4em 1em;
+      font-size: 1em;
+      cursor: pointer;
+      margin-left: 0.5em;
+      transition: background 0.2s;
+    }
+    .lang-switch button.active, .lang-switch button:hover {
+      background: #9d6b53;
+      color: #fff;
+    }
+    main {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 2px 12px rgba(157,107,83,0.07);
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    section h2 {
+      color: #9d6b53;
+      margin-bottom: 0.5rem;
+    }
+    .product {
+      background: #f7ece8;
+      border-radius: 6px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 1px 5px rgba(157,107,83,0.04);
+    }
+    footer {
+      text-align: center;
+      padding: 1rem 0;
+      color: #8c6a5d;
+      background: transparent;
+      font-size: 0.95rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 600px) {
+      main { padding: 1rem; }
+      header h1 { font-size: 2rem; }
+    }
+  </style>
 </head>
 <body>
-    <h1>Hello world!</h1>
-    <p>This is my first HTML page.</p>
+  <header>
+    <h1 id="title-fr">Atelier Marguerite Montréal</h1>
+    <h1 id="title-en" style="display:none;">Atelier Marguerite Montreal</h1>
+    <p id="subtitle-fr">Élégance, savoir-faire artisanal &amp; durabilité</p>
+    <p id="subtitle-en" style="display:none;">Elegance, Craftsmanship &amp; Sustainability</p>
+    <div class="lang-switch">
+      <button id="btn-fr" class="active" onclick="setLang('fr')">FR</button>
+      <button id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </header>
+  <main>
+    <section id="about-fr">
+      <h2>À propos</h2>
+      <p>
+        Atelier Marguerite est une marque de mode et d'accessoires qui incarne l'élégance, le savoir-faire artisanal et la durabilité. Basé à Montréal, notre atelier crée des pièces uniques, allant des bandeaux et couvre-chefs aux vêtements, toutes confectionnées à partir de tissus recyclés et upcyclés.<br><br>
+        Chaque création est cousue avec soin, transformant des tissus oubliés en articles personnalisés qui racontent une nouvelle histoire. Atelier Marguerite s'adresse à celles et ceux qui recherchent l'originalité, la qualité et une conscience éthique dans leur garde-robe. Nos créations sont conçues pour être chéries et portées avec fierté, affirmant un style distinctif et respectueux de l'environnement.
+      </p>
+    </section>
+    <section id="about-en" style="display:none;">
+      <h2>About</h2>
+      <p>
+        Atelier Marguerite is a fashion and accessories brand embodying elegance, artisanal craftsmanship, and sustainability. Based in Montreal, our studio creates unique pieces, from headbands and headwear to clothing, all made from recycled and upcycled fabrics.<br><br>
+        Each creation is carefully sewn, transforming forgotten fabrics into personalized items that tell a new story. Atelier Marguerite is for those seeking originality, quality, and ethical consciousness in their wardrobe. Our creations are made to be cherished and worn with pride, affirming a distinctive, environmentally respectful style.
+      </p>
+    </section>
+    <section id="product-fr">
+      <h2>Produit en vedette</h2>
+      <div class="product">
+        <h3>Couvre-Tête Élégant et Confortable pour Patients</h3>
+        <ul>
+          <li>Discrétion, élégance et confort optimal lors de la perte de cheveux</li>
+          <li>Tissu doux et respirant pour une couvrance complète, sans pression</li>
+          <li>Design chic et intemporel, touche de couleur et motif floral subtil</li>
+          <li>Facile à enfiler, idéal au quotidien ou pour des occasions spéciales</li>
+          <li>Préserve dignité et bien-être, chaque pièce apporte douceur et sérénité</li>
+        </ul>
+        <p>
+          Chaque couvre-tête reflète l'engagement d'Atelier Marguerite Montréal envers des créations à la fois belles et bienveillantes.
+        </p>
+      </div>
+    </section>
+    <section id="product-en" style="display:none;">
+      <h2>Featured Product</h2>
+      <div class="product">
+        <h3>Elegant & Comfortable Headwear for Patients</h3>
+        <ul>
+          <li>Discretion, elegance, and optimal comfort during hair loss</li>
+          <li>Soft, breathable fabric for full coverage without pressure</li>
+          <li>Chic, timeless design with a touch of color and subtle floral pattern</li>
+          <li>Easy to put on, ideal for daily use or special occasions</li>
+          <li>Preserves dignity & well-being, each piece offers softness and serenity</li>
+        </ul>
+        <p>
+          Each headwear piece reflects Atelier Marguerite Montreal’s commitment to creations that are both beautiful and caring.
+        </p>
+      </div>
+    </section>
+    <section id="contact-fr">
+      <h2>Contact</h2>
+      <p>
+        Pour toute question, commande ou collaboration :<br>
+        <a href="mailto:contact@ateliermarguerite.ca">contact@ateliermarguerite.ca</a>
+      </p>
+    </section>
+    <section id="contact-en" style="display:none;">
+      <h2>Contact</h2>
+      <p>
+        For any questions, orders, or collaborations:<br>
+        <a href="mailto:contact@ateliermarguerite.ca">contact@ateliermarguerite.ca</a>
+      </p>
+    </section>
+  </main>
+  <footer id="footer-fr">
+    &copy; 2025 Atelier Marguerite Montréal &mdash; Créations uniques et éthiques, faites à Montréal.
+  </footer>
+  <footer id="footer-en" style="display:none;">
+    &copy; 2025 Atelier Marguerite Montreal &mdash; Unique & ethical creations, made in Montreal.
+  </footer>
+  <script>
+    function setLang(lang) {
+      if (lang === 'fr') {
+        document.getElementById('title-fr').style.display = '';
+        document.getElementById('subtitle-fr').style.display = '';
+        document.getElementById('about-fr').style.display = '';
+        document.getElementById('product-fr').style.display = '';
+        document.getElementById('contact-fr').style.display = '';
+        document.getElementById('footer-fr').style.display = '';
+        
+        document.getElementById('title-en').style.display = 'none';
+        document.getElementById('subtitle-en').style.display = 'none';
+        document.getElementById('about-en').style.display = 'none';
+        document.getElementById('product-en').style.display = 'none';
+        document.getElementById('contact-en').style.display = 'none';
+        document.getElementById('footer-en').style.display = 'none';
+
+        document.getElementById('btn-fr').classList.add('active');
+        document.getElementById('btn-en').classList.remove('active');
+      } else {
+        document.getElementById('title-fr').style.display = 'none';
+        document.getElementById('subtitle-fr').style.display = 'none';
+        document.getElementById('about-fr').style.display = 'none';
+        document.getElementById('product-fr').style.display = 'none';
+        document.getElementById('contact-fr').style.display = 'none';
+        document.getElementById('footer-fr').style.display = 'none';
+
+        document.getElementById('title-en').style.display = '';
+        document.getElementById('subtitle-en').style.display = '';
+        document.getElementById('about-en').style.display = '';
+        document.getElementById('product-en').style.display = '';
+        document.getElementById('contact-en').style.display = '';
+        document.getElementById('footer-en').style.display = '';
+
+        document.getElementById('btn-fr').classList.remove('active');
+        document.getElementById('btn-en').classList.add('active');
+      }
+    }
+  </script>
 </body>
 </html>
