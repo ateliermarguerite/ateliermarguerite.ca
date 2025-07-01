@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -8,14 +8,14 @@
   <style>
     body {
       font-family: "Georgia", serif;
-      background: #fdf6f0;
-      color: #333;
+      background: #FFFFE0; /* Light Yellow */
+      color: #4A4A4A; /* Dark Grey */
       margin: 0;
       padding: 0;
     }
     header {
-      background: #9d6b53;
-      color: #fff;
+      background: #FFD700; /* Cheerful Yellow */
+      color: #4A4A4A; /* Dark Grey text for contrast */
       padding: 2rem 1rem 1rem 1rem;
       text-align: center;
     }
@@ -35,46 +35,46 @@
       margin-right: 1.5rem;
     }
     .lang-switch button {
-      background: #fff;
-      color: #9d6b53;
-      border: 2px solid #9d6b53;
+      background: #FFFFFF; /* White */
+      color: #FFD700; /* Cheerful Yellow */
+      border: 2px solid #FFD700; /* Cheerful Yellow border */
       border-radius: 20px;
       padding: 0.4em 1em;
       font-size: 1em;
       cursor: pointer;
       margin-left: 0.5em;
-      transition: background 0.2s;
+      transition: background 0.2s, color 0.2s;
     }
     .lang-switch button.active, .lang-switch button:hover {
-      background: #9d6b53;
-      color: #fff;
+      background: #FFD700; /* Cheerful Yellow */
+      color: #FFFFFF; /* White text */
     }
     main {
       max-width: 700px;
       margin: 2rem auto;
-      background: #fff;
+      background: #FAFAD2; /* Lighter Yellow for main content area */
       border-radius: 8px;
       padding: 2rem;
-      box-shadow: 0 2px 12px rgba(157,107,83,0.07);
+      box-shadow: 0 2px 12px rgba(255,215,0,0.15); /* Subtle yellow shadow */
     }
     section {
       margin-bottom: 2rem;
     }
     section h2 {
-      color: #9d6b53;
+      color: #DAA520; /* Goldenrod - a deeper yellow for headings */
       margin-bottom: 0.5rem;
     }
     .product {
-      background: #f7ece8;
+      background: #FFFFF0; /* Ivory - very light, like white petals */
       border-radius: 6px;
       padding: 1rem 1.5rem;
       margin-bottom: 1.5rem;
-      box-shadow: 0 1px 5px rgba(157,107,83,0.04);
+      box-shadow: 0 1px 5px rgba(218,165,32,0.1); /* Subtle goldenrod shadow */
     }
     footer {
       text-align: center;
       padding: 1rem 0;
-      color: #8c6a5d;
+      color: #B8860B; /* DarkGoldenrod - for footer text */
       background: transparent;
       font-size: 0.95rem;
       margin-top: 2rem;
@@ -166,6 +166,8 @@
   </footer>
   <script>
     function setLang(lang) {
+      document.documentElement.lang = lang; // Set the lang attribute on the HTML element
+
       if (lang === 'fr') {
         document.getElementById('title-fr').style.display = '';
         document.getElementById('subtitle-fr').style.display = '';
@@ -183,7 +185,7 @@
 
         document.getElementById('btn-fr').classList.add('active');
         document.getElementById('btn-en').classList.remove('active');
-      } else {
+      } else { // Default to English for any language other than French
         document.getElementById('title-fr').style.display = 'none';
         document.getElementById('subtitle-fr').style.display = 'none';
         document.getElementById('about-fr').style.display = 'none';
@@ -202,6 +204,21 @@
         document.getElementById('btn-en').classList.add('active');
       }
     }
+
+    // Function to get the preferred language from the browser
+    function getPreferredLanguage() {
+      return navigator.language || navigator.userLanguage; // Handles different browser implementations
+    }
+
+    // Set the initial language based on browser settings
+    document.addEventListener('DOMContentLoaded', function() {
+      const browserLang = getPreferredLanguage().split('-')[0]; // Get the primary language code (e.g., 'en' from 'en-US')
+      if (browserLang === 'fr') {
+        setLang('fr');
+      } else {
+        setLang('en'); // Default to English if browser language is not French
+      }
+    });
   </script>
 </body>
 </html>
